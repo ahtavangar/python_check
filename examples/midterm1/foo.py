@@ -1,14 +1,14 @@
-from check50 import *
+import check50
 import statistics
 import os
 
-@check
+@check50.check()
 def file_exists_check():
     """Check if the 'midterm1.py' file exists"""
     if not os.path.isfile("midterm1.py"):
         raise Failure("The 'midterm1.py' file does not exist")
 
-@check
+@check50.check(file_exists_check)
 def stats_check():
     """Check the output of the stats(l) function"""
     # Define a sample list to test the stats(l) function
