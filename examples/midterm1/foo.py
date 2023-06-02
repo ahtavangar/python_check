@@ -30,3 +30,5 @@ def stats_check():
     # Compare the expected values with the stats(l) output
     if stats_output != f"Mean: {expected_mean} \nMedian: {expected_median}\nStandard deviation: {expected_stdv} \nRange: {expected_range}":
         raise Failure("The stats(l) function does not produce the correct output")
+    print("Your code passed the stats_check!")
+
