@@ -35,7 +35,7 @@ def stats_check():
     actual = f"Mean: {expected_mean} \nMedian: {expected_median} \nStandard deviation: {expected_stdv} \nRange: {expected_range}"
     print(actual)
     # Compare the expected values with the stats(l) output
-    if stats_output != f"Mean: {expected_mean} \nMedian: {expected_median}\nStandard deviation: {expected_stdv} \nRange: {expected_range}":
+    if stats_output != f"Mean: {expected_mean} \nMedian: {expected_median} \nStandard deviation: {expected_stdv} \nRange: {expected_range}":
         help = "The stats(l) function does not produce the correct output"
         raise check50.Mismatch(stats_output, actual, help=help)
         #raise check50.Failure("The stats(l) function does not produce the correct output")
