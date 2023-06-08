@@ -26,7 +26,7 @@ def stats_check():
     '''
     stats_output = check50.run("python3 midterm1test.py").stdin(sample_list).stdout()
     # Retrieve the expected values using the statistics module
-    sample_list = [1,2,3,4,5]
+    sample_list = [1.0,2.0,3.0,4.0,5.0]
     expected_mean = statistics.mean(sample_list)
     expected_median = statistics.median(sample_list)
     expected_stdv = statistics.stdev(sample_list)
