@@ -1,7 +1,9 @@
+check50.py.append_code(foo.py, midterm1)
+
 import check50
 import statistics
 import os
-from midterm1 import *
+
 
 @check50.check()
 def file_exists_check():
@@ -18,7 +20,7 @@ def stats_check():
 
     # Call the stats(l) function from the "midterm1.py" file
     try:
-        from midterm1test import stats
+        #from midterm1test import stats
         stats_output = stats(sample_list)
     except Exception as e:
         raise check50.Failure(f"Error while calling stats(l) function: {e}")
