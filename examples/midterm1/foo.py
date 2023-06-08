@@ -6,22 +6,19 @@ import os
 def file_exists_check():
     """Check if the 'midterm1.py' file exists"""
     if not os.path.isfile("midterm1.py"):
-        raise check50.Failure("The 'midterm1.py' file does not exist")
+        raise check50.Failure("The 'midterm1test.py' file does not exist")
 
 @check50.check(file_exists_check)
 def stats_check():
     """Check the output of the stats(l) function"""
     
-    if not check50.exists("midterm1.py"):
-        return
-        
     # Define a sample list to test the stats(l) function
     sample_list = [1, 2, 3, 4, 5]
 
     # Call the stats(l) function from the "midterm1.py" file
     try:
-        import midterm1
-        stats_output = midterm1.stats(sample_list)
+        import midterm1test
+        stats_output = midterm1test.stats(sample_list)
     except Exception as e:
         raise check50.Failure(f"Error while calling stats(l) function: {e}")
 
