@@ -1,9 +1,6 @@
 import check50
-import check50.py
 import statistics
 import os
-
-check50.py.append_code('foo.py', 'midterm1test.py')
 
 
 @check50.check()
@@ -20,12 +17,14 @@ def stats_check():
     sample_list = [1, 2, 3, 4, 5]
 
     # Call the stats(l) function from the "midterm1.py" file
+    '''
     try:
         #from midterm1test import stats
         stats_output = stats(sample_list)
     except Exception as e:
         raise check50.Failure(f"Error while calling stats(l) function: {e}")
-
+    '''
+    stats_output = check50.run("python3 midterm1test.py").stdin(sample_list).stdout()
     # Retrieve the expected values using the statistics module
     expected_mean = statistics.mean(sample_list)
     expected_median = statistics.median(sample_list)
