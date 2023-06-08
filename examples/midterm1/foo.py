@@ -4,8 +4,8 @@ import os
 
 @check50.check()
 def file_exists_check():
-    """Check if the 'midterm1.py' file exists"""
-    if not os.path.isfile("midterm1.py"):
+    """Check if the 'midterm1test.py' file exists"""
+    if not os.path.isfile("midterm1test.py"):
         raise check50.Failure("The 'midterm1test.py' file does not exist")
 
 @check50.check(file_exists_check)
