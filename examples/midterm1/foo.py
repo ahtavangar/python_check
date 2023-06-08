@@ -1,6 +1,7 @@
 import check50
 import statistics
 import os
+import re
 
 
 @check50.check()
@@ -24,20 +25,20 @@ def stats_check():
     except Exception as e:
         raise check50.Failure(f"Error while calling stats(l) function: {e}")
     '''
-    stats_output = check50.run("python3 midterm1test.py").stdin(sample_list).stdout()
+    actual = check50.run("python3 midterm1test.py").stdin(sample_list).stdout()
     # Retrieve the expected values using the statistics module
     sample_list = [1.0,2.0,3.0,4.0,5.0]
     expected_mean = statistics.mean(sample_list)
     expected_median = statistics.median(sample_list)
     expected_stdv = statistics.stdev(sample_list)
     expected_range = max(sample_list) - min(sample_list)
-    print('stats_output:',stats_output)
+    
     actual = f"Mean: {expected_mean} \nMedian: {expected_median} \nStandard deviation: {expected_stdv} \nRange: {expected_range}"
     print(actual)
     # Compare the expected values with the stats(l) output
-    if stats_output != f"Mean: {expected_mean} \nMedian: {expected_median} \nStandard deviation: {expected_stdv} \nRange: {expected_range}":
+    if not re.search(expected, actual):
         help = "The stats(l) function does not produce the correct output"
-        raise check50.Mismatch(stats_output, actual, help=help)
+        raise check50.Mismatch(expected, actual, help=help)
         #raise check50.Failure("The stats(l) function does not produce the correct output")
         
     print("Your code passed the stats_check!")
