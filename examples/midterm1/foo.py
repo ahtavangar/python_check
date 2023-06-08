@@ -32,7 +32,7 @@ def mode_check():
     # Retrieve the expected values using the statistics module
     sample_list0 = [2.0,2.0,3.0,4.0,5.0]
         
-    expected = f"Mode: {find_mode(sample_list0}"
+    expected = f"Mode: {find_mode(sample_list0)}"
     
     # Compare the expected values with the stats(l) output
     if not re.search(expected, actual):
