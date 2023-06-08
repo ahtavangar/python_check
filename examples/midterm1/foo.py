@@ -18,7 +18,7 @@ def stats_check():
     # Call the stats(l) function from the "midterm1.py" file
     try:
         import midterm1test
-        stats_output = midterm1test.stats(sample_list)
+        stats_output = stats(sample_list)
     except Exception as e:
         raise check50.Failure(f"Error while calling stats(l) function: {e}")
 
