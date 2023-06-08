@@ -1,8 +1,8 @@
-check50.py.append_code(foo.py, midterm1)
-
 import check50
 import statistics
 import os
+
+check50.py.append_code(foo.py, midterm1)
 
 
 @check50.check()
