@@ -3,7 +3,7 @@ import check50.py
 import statistics
 import os
 
-check50.py.append_code('foo.py', 'midterm1.py')
+check50.py.append_code('foo.py', 'midterm1test.py')
 
 
 @check50.check()
