@@ -1,7 +1,7 @@
 import check50
 import statistics
 import os
-from midterm1test.py import *
+from midterm import *
 
 @check50.check()
 def file_exists_check():
