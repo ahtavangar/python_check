@@ -32,9 +32,13 @@ def stats_check():
     expected_stdv = statistics.stdev(sample_list)
     expected_range = max(sample_list) - min(sample_list)
     print('stats_output:',stats_output)
-    print(f"Mean: {expected_mean} \nMedian: {expected_median}\nStandard deviation: {expected_stdv} \nRange: {expected_range}")
+    actual = f"Mean: {expected_mean} \nMedian: {expected_median}\nStandard deviation: {expected_stdv} \nRange: {expected_range}"
+    print(actual)
     # Compare the expected values with the stats(l) output
     if stats_output != f"Mean: {expected_mean} \nMedian: {expected_median}\nStandard deviation: {expected_stdv} \nRange: {expected_range}":
-        raise check50.Failure("The stats(l) function does not produce the correct output")
+        help = "The stats(l) function does not produce the correct output"
+        raise check50.Mismatch(stats_output, actual, help=help)
+        #raise check50.Failure("The stats(l) function does not produce the correct output")
+        
     print("Your code passed the stats_check!")
 
