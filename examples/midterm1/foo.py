@@ -32,7 +32,7 @@ def stats_check():
     expected_stdv = statistics.stdev(sample_list)
     expected_range = max(sample_list) - min(sample_list)
     print('stats_output:',stats_output)
-    actual = f"Mean: {expected_mean} \nMedian: {expected_median}\nStandard deviation: {expected_stdv} \nRange: {expected_range}"
+    actual = f"Mean: {expected_mean} \nMedian: {expected_median} \nStandard deviation: {expected_stdv} \nRange: {expected_range}"
     print(actual)
     # Compare the expected values with the stats(l) output
     if stats_output != f"Mean: {expected_mean} \nMedian: {expected_median}\nStandard deviation: {expected_stdv} \nRange: {expected_range}":
