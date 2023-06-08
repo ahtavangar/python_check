@@ -1,4 +1,5 @@
 import check50
+import check50.py
 import statistics
 import os
 
