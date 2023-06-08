@@ -14,7 +14,7 @@ def stats_check():
     """Check the output of the stats(l) function"""
     
     # Define a sample list to test the stats(l) function
-    sample_list = [1, 2, 3, 4, 5]
+    sample_list = '1, 2, 3, 4, 5'
 
     # Call the stats(l) function from the "midterm1.py" file
     '''
