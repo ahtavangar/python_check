@@ -65,11 +65,11 @@ def stats_check2():
     """Check the output of the stats(l) function"""
     
     # Define a sample list to test the stats(l) function
-    sample_list = '2.1, 2.1, 3.0, 4.0, 5.0, 5.0'
+    sample_list = '2.1, 2.1, 3.0, 4.0, 5.0, 5.0, 5.0, 9.1'
 
     actual = check50.run("python3 midterm1test.py").stdin(sample_list).stdout()
     # Retrieve the expected values using the statistics module
-    sample_list = [2.1, 2.1, 3.0, 4.0, 5.0, 5.0]
+    sample_list = [2.1, 2.1, 3.0, 4.0, 5.0, 5.0, 5.0, 9.1]
     ex_mean = statistics.mean(sample_list)
     ex_median = statistics.median(sample_list)
     ex_mode = 2.1
