@@ -84,7 +84,7 @@ def stats_check2():
     # Compare the expected values with the stats(l) output
     if not re.search(expected, actual, re.IGNORECASE):
        
-        missing_v, help = find_values(actual,[ex_mean, ex_median, ex_stdv, ex_range])
+        missing_v, help = find_values(actual, {'Mean':ex_mean, 'Median': ex_median, 'Standard deviation':ex_stdv, 'Range':ex_range})
         if missing_v == 0:
             raise check50.Missing(ex_mode, actual, help=help)
         else:
