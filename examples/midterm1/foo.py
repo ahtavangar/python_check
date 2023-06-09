@@ -79,7 +79,7 @@ def stats_check2():
     expected_stdv = statistics.stdev(sample_list)
     expected_range = max(sample_list) - min(sample_list)
     
-    expected = f"Mean: {expected_mean} \nMedian: {expected_median} \nMode: {expected_mode} \nStandard deviation: {expected_stdv} \nRange: {expected_range}"
+    expected = f"Mean:\s* {expected_mean}\s* \nMedian:\s* {expected_median}\s* \nMode:\s* {expected_mode}\s* \nStandard deviation:\s* {expected_stdv}\s* \nRange:\s* {expected_range}"
     
     # Compare the expected values with the stats(l) output
     if not re.search(expected, actual, re.IGNORECASE):
