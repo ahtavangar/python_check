@@ -72,7 +72,7 @@ def stats_check2():
     sample_list = [2.1, 2.1, 3.0, 4.0, 5.0, 5.0, 5.0, 9.1]
     ex_mean = statistics.mean(sample_list)
     ex_median = statistics.median(sample_list)
-    ex_mode = 2.1
+    ex_mode = 5.0
     ex_stdv = statistics.stdev(sample_list)
     ex_range = max(sample_list) - min(sample_list)
     
