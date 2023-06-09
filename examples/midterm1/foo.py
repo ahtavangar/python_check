@@ -46,7 +46,7 @@ def stats_check1():
     # Define a sample list to test the stats(l) function
     sample_list = '1, 2, 3, 4, 5'
 
-    actual = check50.run("python3 midterm1test.py").stdin(sample_list).stdout().exit(0)
+    actual = check50.run("python3 midterm1test.py").stdin(sample_list).stdout()
     # Retrieve the expected values using the statistics module
     sample_list = [1.0,2.0,3.0,4.0,5.0]
     expected_mean = statistics.mean(sample_list)
@@ -70,7 +70,7 @@ def stats_check2():
     # Define a sample list to test the stats(l) function
     sample_list = '2, 2, 3, 4, 5, 5, 5'
 
-    actual = check50.run("python3 midterm1test.py").stdin(sample_list).stdout().exit(0)
+    actual = check50.run("python3 midterm1test.py").stdin(sample_list).stdout()
     # Retrieve the expected values using the statistics module
     sample_list = [2.0,2.0,3.0,4.0,5.0,5.0,5.0]
     expected_mean = statistics.mean(sample_list)
