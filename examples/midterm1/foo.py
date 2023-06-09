@@ -46,17 +46,18 @@ def stats_check1():
     ex_stdv = statistics.stdev(sample_list)
     ex_range = max(sample_list) - min(sample_list)
     
-    expected = f"Mean:\s*{ex_mean}\s*\nMedian:\s*{ex_median}\s*\nMode:\s*{ex_mode}\s*\nStandard deviation:\s*{ex_stdv}\s*\nRange:\s*{ex_range}"
-
+    expected = fr"Mean:\s*{ex_mean}\s*\nMedian:\s*{ex_median}\s*\nMode:\s*{ex_mode}\s*\nStandard deviation:\s*{ex_stdv}\s*\nRange:\s*{ex_range}"
+    #display version of expected to show when error raised
+    expected_dis = f"Mean: {ex_mean}\nMedian: {ex_median}\nMode: {ex_mode}\nStandard deviation: {ex_stdv}\nRange: {ex_range}"
     
     # Compare the expected values with the stats(l) output
     if not re.search(expected, actual, re.IGNORECASE):
        
         missing_v, help = find_values(expected,[ex_mean, ex_median, ex_stdv, ex_range])
         if missing_v == 0:
-            raise check50.Missing(expected, actual, help=help)
+            raise check50.Missing(expected_dis, actual, help=help)
         else:
-            raise check50.Mismatch(expected, actual, help=help)
+            raise check50.Mismatch(expected_dis, actual, help=help)
         #raise check50.Failure("The stats(l) function does not produce the correct output")
         
 @check50.check(file_exists_check)
@@ -76,11 +77,14 @@ def stats_check2():
     ex_range = max(sample_list) - min(sample_list)
     
     expected = f"Mean:\s*{ex_mean}\s*\nMedian:\s*{ex_median}\s*\nMode:\s*{ex_mode}\s*\nStandard deviation:\s*{ex_stdv}\s*\nRange:\s*{ex_range}"    
+    #display version of expected to show when error raised
+    expected_dis = f"Mean: {ex_mean}\nMedian: {ex_median}\nMode: {ex_mode}\nStandard deviation: {ex_stdv}\nRange: {ex_range}"
+    
     # Compare the expected values with the stats(l) output
     if not re.search(expected, actual, re.IGNORECASE):
-        help = ''
-        missing_v, help1 = find_values(expected,[ex_mean, ex_median, ex_stdv, ex_range])
+       
+        missing_v, help = find_values(expected,[ex_mean, ex_median, ex_stdv, ex_range])
         if missing_v == 0:
-            raise check50.Missing(ex_mode, actual, help=help1)
+            raise check50.Missing(expected_dis, actual, help=help)
         else:
-            raise check50.Mismatch(expected, actual, help=help1)
+            raise check50.Mismatch(expected_dis, actual, help=help)
