@@ -28,7 +28,7 @@ def mode_check():
     sample_list0 = '2, 2, 3, 4, 5'
 
    
-    actual = check50.run("python3 midterm1test.py").stdin(sample_list0).stdout()
+    actual = check50.run("python3 midterm1test.py").stdin(sample_list0).stdout().exit(0)
     # Retrieve the expected values using the statistics module
     sample_list0 = [2.0,2.0,3.0,4.0,5.0]
         
@@ -55,7 +55,7 @@ def stats_check():
     except Exception as e:
         raise check50.Failure(f"Error while calling stats(l) function: {e}")
     '''
-    actual = check50.run("python3 midterm1test.py").stdin(sample_list).stdout()
+    actual = check50.run("python3 midterm1test.py").stdin(sample_list).stdout().exit(0)
     # Retrieve the expected values using the statistics module
     sample_list = [1.0,2.0,3.0,4.0,5.0]
     expected_mean = statistics.mean(sample_list)
