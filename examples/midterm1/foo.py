@@ -58,7 +58,7 @@ def stats_check1():
     expected = f"Mean: {expected_mean} \nMedian: {expected_median} \nMode: {expected_mode} \nStandard deviation: {expected_stdv} \nRange: {expected_range}"
     
     # Compare the expected values with the stats(l) output
-    if not re.search(expected, actual):
+    if not re.search(expected, actual, re.IGNORECASE):
         help = "The stats(l) function does not produce the correct output"
         raise check50.Mismatch(expected, actual, help=help)
         #raise check50.Failure("The stats(l) function does not produce the correct output")
@@ -82,7 +82,7 @@ def stats_check2():
     expected = f"Mean: {expected_mean} \nMedian: {expected_median} \nMode: {expected_mode} \nStandard deviation: {expected_stdv} \nRange: {expected_range}"
     
     # Compare the expected values with the stats(l) output
-    if not re.search(expected, actual):
+    if not re.search(expected, actual, re.IGNORECASE):
         help = "The stats(l) function does not produce the correct output"
         raise check50.Mismatch(expected, actual, help=help)
         #raise check50.Failure("The stats(l) function does not produce the correct output")
