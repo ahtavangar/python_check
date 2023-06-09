@@ -9,7 +9,7 @@ import numpy as np
 # Look up the values other than the mode in the student' answer and provide feedback. used in check50.Mismatch
 def find_values(text,values):
     values=[str(i) for i in values]
-    pattern = rf"{values[0]}|{values[1]}|{values[2]}|{values[3]}"
+    pattern = f"{values[0]}|{values[1]}|{values[2]}|{values[3]}"
 
     matches = re.findall(pattern, text, re.IGNORECASE)
     found_values = set(matches)
