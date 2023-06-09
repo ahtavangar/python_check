@@ -55,7 +55,7 @@ def stats_check1():
        
         missing_v, help = find_values(expected,[ex_mean, ex_median, ex_stdv, ex_range])
         if missing_v == 0:
-            raise check50.Missing(expected_dis, actual, help=help)
+            raise check50.Missing(ex_mode, actual, help=help)
         else:
             raise check50.Mismatch(expected_dis, actual, help=help)
         #raise check50.Failure("The stats(l) function does not produce the correct output")
@@ -85,6 +85,6 @@ def stats_check2():
        
         missing_v, help = find_values(expected,[ex_mean, ex_median, ex_stdv, ex_range])
         if missing_v == 0:
-            raise check50.Missing(expected_dis, actual, help=help)
+            raise check50.Missing(ex_mode, actual, help=help)
         else:
             raise check50.Mismatch(expected_dis, actual, help=help)
