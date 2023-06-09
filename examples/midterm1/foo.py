@@ -51,12 +51,12 @@ def stats_check1():
     
     # Compare the expected values with the stats(l) output
     if not re.search(expected, actual, re.IGNORECASE):
-        help = ''
-        missing_v, help1 = find_values(expected,[ex_mean, ex_median, ex_stdv, ex_range])
+       
+        missing_v, help = find_values(expected,[ex_mean, ex_median, ex_stdv, ex_range])
         if missing_v == 0:
-            raise check50.Missing(ex_mode, actual, help=help1)
+            raise check50.Missing(expected, actual, help=help)
         else:
-            raise check50.Mismatch(expected, actual, help=help1)
+            raise check50.Mismatch(expected, actual, help=help)
         #raise check50.Failure("The stats(l) function does not produce the correct output")
         
 @check50.check(file_exists_check)
