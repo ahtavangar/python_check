@@ -7,19 +7,20 @@ import numpy as np
 
 
 # Look up the values other than the mode in the student' answer and provide feedback. used in check50.Mismatch
-def find_values(text,values):
-    values=[str(i) for i in values]
-    pattern = f"{values[0]}|{values[1]}|{values[2]}|{values[3]}"
-
-    matches = re.findall(pattern, text, re.IGNORECASE)
-    found_values = set(matches)
+def find_values(text, dic):
     
-    missing_values = set(values) - found_values
+    missing_values = []
+    for key, value in dic.items():
+        pattern = fr"{value}"
+        match = re.search(pattern, text)
+        if not match:
+            missing_values.append(f"{key}: {value}")
+
     if len(missing_values) == 0:
         help = "All statistics except the mode is correct. Check your find_mode() function."
-        
     else:
-        help = "Mismatch. Check both find_mode and stats(l) functions. The missing value(s) in addition to the mode:", ", ".join(missing_values)
+        missing_info = "\n ".join(missing_values)
+        help = f"Mismatch. Check your stats(l) function. Missing value(s):\n {missing_info}"
     
     return(len(missing_values),help)
 
