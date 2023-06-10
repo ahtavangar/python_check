@@ -25,7 +25,7 @@ def read_text_check1():
     #expected_dis = f"Mean: {ex_mean}\nMedian: {ex_median}\nMode: {ex_mode}\nStandard deviation: {ex_stdv}\nRange: {ex_range}"
     
     if not re.search(expected, actual):
-        help "read_text() function does not produce the correct output"
+        help = "read_text() function does not produce the correct output"
         raise check50.Mismatch(expected, actual, help=help)
         #raise check50.Failure("read_text() function does not produce the correct output")
 
