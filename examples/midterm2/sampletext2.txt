@@ -1,0 +1,19 @@
+1. Company XYZ Quarterly Financial Report - Location 1:
+   - Revenue: $5,678,901
+   - Expenses: $4,123,456
+   - Net Profit: $1,555,445
+   - Number of Units Sold: 8,000
+   - Average Selling Price per Unit: $223.56
+   - Total Assets: $11,234,567
+   - Total Liabilities: $8,765,432
+   - Shareholder's Equity: $2,469,105
+2. Company XYZ Quarterly Financial Report - Location 2:
+   - Revenue: $6,789,012
+   - Expenses: $5,012,345
+   - Net Profit: $1,776,667
+   - Number of Units Sold: 18,000
+   - Average Selling Price per Unit: $398.33
+   - Total Assets: $12,345,678
+   - Total Liabilities: $9,876,543
+   - Shareholder's Equity: $2,469,107
+
