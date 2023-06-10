@@ -51,14 +51,15 @@ def extract_values_check1():
 
     actual = check50.run("python3 Assignment_2.py").stdin('sample.txt').stdout()
       
-    expected = "1234567.0"
+    expected = "987654.0"
     #display version of expected to show when error raised
     #expected_dis = f"Mean: {ex_mean}\nMedian: {ex_median}\nMode: {ex_mode}\nStandard deviation: {ex_stdv}\nRange: {ex_range}"
     
     if not re.search(expected, actual):
-        help = "extract_values() function does not produce the correct output"
-        raise check50.Mismatch(expected, actual, help=help)
-        #raise check50.Failure("The stats(l) function does not produce the correct output")
+        if re.search(r"\$987,654", actual) # if the value with $ sign and comma exists it means make_value_float() does not work properly or not applied
+            help = "Expected a float value for Expenses. make_value_float() function does not produce the correct output"
+            raise check50.Mismatch(expected, actual, help=help)
+        raise check50.Failure("extract_values() function does not produce the correct output")
         
         
 @check50.check(file_exists_check)
