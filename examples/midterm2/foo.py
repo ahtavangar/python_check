@@ -2,9 +2,6 @@ import check50
 import os
 import re
 
-
-
-
 @check50.check()
 def file_exists_check():
     """Check if the 'Assignment_2.py' file exists"""
@@ -20,7 +17,7 @@ def read_text_check1():
 
     actual = check50.run("python3 Assignment_2.py").stdin('sample.txt').stdout()
       
-    expected = r"- Revenue: \$1,234,567" #"1. Company XYZ Quarterly Financial Report - Location 1:"
+    expected = r"- Revenue: \$1,234,567" #"- Expenses: \$4,123,456"
     #display version of expected to show when error raised
     #expected_dis = f"Mean: {ex_mean}\nMedian: {ex_median}\nMode: {ex_mode}\nStandard deviation: {ex_stdv}\nRange: {ex_range}"
     
@@ -29,6 +26,22 @@ def read_text_check1():
         raise check50.Mismatch(expected, actual, help=help)
         #raise check50.Failure("read_text() function does not produce the correct output")
 
+@check50.check(file_exists_check)
+def read_text_check2():
+    """Check the output of the read_text() function"""
+    
+    check50.include("sampletext2.txt")
+    assert os.path.exists("sampletext2.txt")
+
+    actual = check50.run("python3 Assignment_2.py").stdin('sampletext2.txt').stdout()
+      
+    expected = r"- Expenses: \$4,123,456"
+        
+    if not re.search(expected, actual):
+        help = "read_text() function does not produce the correct output"
+        raise check50.Mismatch(expected, actual, help=help)
+        #raise check50.Failure("read_text() function does not produce the correct output")        
+        
 @check50.check(file_exists_check)
 def extract_values_check1():
     """Check the output of the extract_values() function"""
