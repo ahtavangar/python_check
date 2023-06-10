@@ -18,7 +18,7 @@ def extract_values_check1():
     check50.include("sample.txt")
     assert os.path.exists("sample.txt")
 
-    actual = check50.run("python3 Assignment_2.py").stdin().stdout()
+    actual = check50.run("python3 Assignment_2.py").stdin('sample.txt').stdout()
       
     expected = {'Location1': {'Revenue': 1234567.0, 'Expenses': 987654.0, 'Net Profit': 246913.0, 'Units Sold': 10000.0, 'Average Unit Price': 123.45}, 'Location2': {'Revenue': 2345678.0, 'Expenses': 1876543.0, 'Net Profit': 469135.0, 'Units Sold': 15000.0, 'Average Unit Price': 156.42}}
     #display version of expected to show when error raised
