@@ -35,7 +35,7 @@ def read_text_check2():
 
     actual = check50.run("python3 Assignment_2.py").stdin('sampletext2.txt').stdout()
       
-    expected = r"- Expenses: \$4,123,456"
+    expected = r"- Net Profit: \$1,555,445"
         
     if not re.search(expected, actual):
         help = "read_text() function does not produce the correct output"
