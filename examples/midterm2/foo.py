@@ -20,7 +20,7 @@ def read_text_check1():
 
     actual = check50.run("python3 Assignment_2.py").stdin('sample.txt').stdout()
       
-    expected = r"\s*- Revenue: $1,234,567"
+    expected = r"\s*- Revenue: $1,234,567\s*"
     #display version of expected to show when error raised
     #expected_dis = f"Mean: {ex_mean}\nMedian: {ex_median}\nMode: {ex_mode}\nStandard deviation: {ex_stdv}\nRange: {ex_range}"
     
