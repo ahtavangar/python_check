@@ -10,7 +10,7 @@ def file_exists_check():
  
 @check50.check(file_exists_check)
 def read_text_check1():
-    """Check the output of the read_text() function (line 4) with sample.txt""" # file provided to students
+    """Check the output of the read_text() function (line 4) for sample.txt""" # file provided to students
     
     check50.include("sample.txt")
     assert os.path.exists("sample.txt")
@@ -25,7 +25,7 @@ def read_text_check1():
 
 @check50.check(file_exists_check)
 def read_text_check2():
-    """Check the output of the read_text() function (line 4) with sampletext2.txt""" # file NOT provided to students
+    """Check the output of the read_text() function (line 4) for sampletext2.txt""" # file NOT provided to students
     
     check50.include("sampletext2.txt")
     assert os.path.exists("sampletext2.txt")
@@ -40,7 +40,7 @@ def read_text_check2():
         
 @check50.check(file_exists_check)
 def extract_values_check1():
-    """Check the output of the extract_values() function for Expenses of Location1 in sample.txt""" # file provided to students
+    """Check the output of the extract_values() function for Expenses of Location1 for sample.txt""" # file provided to students
     
     check50.include("sample.txt")
     assert os.path.exists("sample.txt")
@@ -57,7 +57,7 @@ def extract_values_check1():
         
 @check50.check(file_exists_check)
 def extract_values_check2():
-    """Check the output of the extract_values() function for Location2 in sample.txt""" # file provided to students
+    """Check the output of the extract_values() function for Location2 for sample.txt""" # file provided to students
     
     check50.include("sample.txt")
     assert os.path.exists("sample.txt")
@@ -73,7 +73,7 @@ def extract_values_check2():
         
 @check50.check(file_exists_check)
 def extract_values_check3():
-    """Check the output of the extract_values() function for Expenses of Location1 with sampletext2.txt""" # file NOT provided to students
+    """Check the output of the extract_values() function for Expenses of Location1 for sampletext2.txt""" # file NOT provided to students
     
     check50.include("sampletext2.txt")
     assert os.path.exists("sampletext2.txt")
@@ -90,7 +90,7 @@ def extract_values_check3():
         
 @check50.check(file_exists_check)
 def extract_values_check4(): 
-    """Check the output of the extract_values() function for Location2 with sampletext2.txt""" # file NOT provided to students
+    """Check the output of the extract_values() function for Location2 for sampletext2.txt""" # file NOT provided to students
     
     check50.include("sampletext2.txt")
     assert os.path.exists("sampletext2.txt")
