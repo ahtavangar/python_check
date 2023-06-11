@@ -19,7 +19,7 @@ def file_exists_check():
  
 @check50.check(file_exists_check)
 def calculate_statistics_check1():
-    """Check the output of the calculate_statistics function indirectly from the output of extract_financials() for MidtermFinancialReport.txt""" # file provided to students
+    """Check the output of the calculate_statistics function from extract_financials() for MidtermFinancialReport.txt""" # file provided to students
     
     check50.include("MidtermFinancialReport.txt")
     assert os.path.exists("MidtermFinancialReport.txt")
@@ -34,7 +34,7 @@ def calculate_statistics_check1():
 
 @check50.check(file_exists_check)
 def calculate_statistics_check2():
-    """Check the output of the calculate_statistics function indirectly from the output of extract_financials() for MidtermFinancialReport.txt""" # file provided to students
+    """Check the output of the calculate_statistics function from extract_financials() for MidtermFinancialReport.txt""" # file provided to students
     
     check50.include("MidtermFinancialReport.txt")
     assert os.path.exists("MidtermFinancialReport.txt")
@@ -67,7 +67,7 @@ def extract_financials_check1():
         
 @check50.check(file_exists_check)
 def extract_values_check2():
-    """Check the output of the extract_values() function for the last three dictionary keys for sample.txt""" # file provided to students
+    """Check the output of the extract_financials() function for the last three dictionary keys for MidtermFinancialReport.txt""" # file provided to students
     
     check50.include("MidtermFinancialReport.txt")
     assert os.path.exists("MidtermFinancialReport.txt")
