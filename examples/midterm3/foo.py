@@ -4,7 +4,7 @@ import re
 
 # this function checks if all values in a dictionary output are present in the student's output
 def findAllValues(number_list, actual):
-    found = all(number in expected for number in numbers)
+    found = all(number in actual for number in number_list)
     if found:
         help = 'all statistics values are correct but the output does not have a correct format.'
     else:
@@ -60,9 +60,8 @@ def extract_financials_check1():
     if not re.search(expected, actual):
         expected_values = ['3950746.35', '3105000.5', '1666667.0', '3128996.141825821', '246913.0', '10433333.0', '10186420.0']
         found, help = findAllValues(expected_values, actual)
-        if re.search(r"\$987,654", actual): # if the correct value with $ and comma exists, it means make_value_float() does not work properly or not applied
-            if found == True:
-              raise check50.Mismatch(expected, actual, help=help)
+        if found == True:
+            raise check50.Mismatch(expected, actual, help=help)
         raise check50.Failure("extract_financials() function does not produce the correct output.")
         
         
