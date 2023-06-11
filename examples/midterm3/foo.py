@@ -29,8 +29,8 @@ def calculate_statistics_check1():
         
     if not re.search(expected, actual):
         help = "check calculate_statistics() function"
-        #raise check50.Mismatch(expected, actual, help=help)
-        raise check50.Failure("Your answer does not include the correct output for the minimum reveue across all locations.")
+        raise check50.Mismatch(expected, actual, help=help)
+        #raise check50.Failure("Your answer does not include the correct output for the minimum reveue across all locations.")
 
 @check50.check(file_exists_check)
 def calculate_statistics_check2():
@@ -44,8 +44,8 @@ def calculate_statistics_check2():
         
     if not re.search(expected, actual):
         help = "check calculate_statistics() function"
-        #raise check50.Mismatch(expected, actual, help=help)
-        raise check50.Failure("Your answer does not include the correct output for mean expenses across all locations.", help = help)    
+        raise check50.Mismatch(expected, actual, help=help)
+        #raise check50.Failure("Your answer does not include the correct output for mean expenses across all locations.", help = help)    
         
 @check50.check(file_exists_check)
 def extract_financials_check1():
@@ -76,8 +76,8 @@ def extract_values_check2():
     expected = "['Location19', 'Location20', 'Statistics']"
         
     if not re.search(expected, actual):
-        #help = "extract_values() function does not produce the correct output"
-        #raise check50.Mismatch(expected, actual, help=help)
         help = "Make sure the keys are returned in a list."
-        raise check50.Failure("Your answer does not include the correct output for the last three keys in the financials dictionary.", help = help)
+        raise check50.Mismatch(expected, actual, help=help)
+        
+        #raise check50.Failure("Your answer does not include the correct output for the last three keys in the financials dictionary.", help = help)
         
