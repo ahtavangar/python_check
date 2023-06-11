@@ -66,14 +66,14 @@ def extract_financials_check1():
         
         
 @check50.check(file_exists_check)
-def extract_values_check2():
+def extract_financials_check2():
     """Check the output of the extract_financials() function for the last three dictionary keys for MidtermFinancialReport.txt""" # file provided to students
     
     check50.include("MidtermFinancialReport.txt")
     assert os.path.exists("MidtermFinancialReport.txt")
 
     actual = check50.run("python3 Assignment_3.py").stdin("MidtermFinancialReport.txt").stdout()
-    expected = "['Location19', 'Location20', 'Statistics']"
+    expected = "'Location19', 'Location20', 'Statistics'"
         
     if not re.search(expected, actual):
         help = "Make sure the keys are returned in a list."
