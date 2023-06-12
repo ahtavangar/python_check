@@ -79,7 +79,7 @@ def extract_financials_check2():
     expected2 = "'Location19', 'Location20', 'Statistics'"
         
     if not re.search(expected, actual):
-        if re.search(expected2,actual) and len(actual_keys)!=3:
+        if re.search(expected2,actual) and len(actual_keys)>3:
             help1 = "Make sure your output includes only the last three keys."
             raise check50.Mismatch(expected_disp, actual, help=help1)
         help2 = f"Make sure the keys are returned in a list: {actual_keys}"
