@@ -74,7 +74,7 @@ def extract_financials_check2():
 
     actual = check50.run("python3 Assignment_3.py").stdin("MidtermFinancialReport.txt").stdout().strip('\n').split('\n')[3] 
     actual_keys = actual.strip('[]').split(',') # the list of keys in a list
-    expected = "['Location19', 'Location20', 'Statistics']"
+    expected = "'Location19', 'Location20', 'Statistics'"
         
     if not re.search(expected, actual):
         help = f"Make sure the keys are returned in a list: {actual_keys}"
