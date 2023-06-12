@@ -104,7 +104,7 @@ def extract_values_check4():
         help = "Make sure the financials for Location2 are in a dictionary and all values are float"
         raise check50.Failure("extract_values() function does not produce the correct output", help = help)
         
- @check50.check(file_exists_check):
+ @check50.check(file_exists_check)
     def make_value_float_check():
     '''Checks the out put of make_value_float() function for extra_check.py'''
     
