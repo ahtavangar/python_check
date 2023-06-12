@@ -17,7 +17,7 @@ Management's confidence in the company's future prospects is underpinned by its 
 
 The financial reports for our different locations are as follows:
 1. Company XYZ Quarterly Financial Report - Location 1:
-   - Revenue: $1,234,567
+   - Revenue: $1,230,067
    - Expenses: $987,654
    - Net Profit: $246,913
    - Number of Units Sold: 10,000
