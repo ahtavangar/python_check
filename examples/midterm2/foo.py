@@ -103,3 +103,16 @@ def extract_values_check4():
         #raise check50.Mismatch(expected, actual, help=help)
         help = "Make sure the financials for Location2 are in a dictionary and all values are float"
         raise check50.Failure("extract_values() function does not produce the correct output", help = help)
+        
+ @check50.check(file_exists_check):
+    def make_value_float_check():
+    '''Checks the out put of make_value_float() function for extra_check.py'''
+    
+    check50.py.append_code("Assignment_1.py", "extra_checks.py")
+    actual = check50.run("python3 Assignment_1.py").stdout()
+    expected = "1234008.23"
+    
+    if not re.search(expected, actual):
+        help = "make_value_float() function does not produce the correct output"
+        raise check50.Mismatch(expected, actual, help=help)
+        #raise check50.Failure("make_value_float() function does not produce the correct output")
