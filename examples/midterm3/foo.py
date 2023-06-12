@@ -72,7 +72,7 @@ def extract_financials_check2():
     check50.include("MidtermFinancialReport.txt")
     assert os.path.exists("MidtermFinancialReport.txt")
 
-    actual = check50.run("python3 Assignment_3.py").stdin("MidtermFinancialReport.txt").stdout()
+    actual = check50.run("python3 Assignment_3.py").stdin("MidtermFinancialReport.txt").stdout().strip('\n').split('\n')[3]
     expected = "'Location19', 'Location20', 'Statistics'"
         
     if not re.search(expected, actual):
