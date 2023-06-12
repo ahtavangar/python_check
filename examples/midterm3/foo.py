@@ -76,10 +76,14 @@ def extract_financials_check2():
     actual_keys = actual.strip('[]').split(',') # the list of keys in a list
     expected = r"\['Location19', 'Location20', 'Statistics'\]"
     expected_disp = "['Location19', 'Location20', 'Statistics']"
+    expected2 = "'Location19', 'Location20', 'Statistics'"
         
     if not re.search(expected, actual):
-        help = f"Make sure the keys are returned in a list: {actual_keys}"
-        raise check50.Mismatch(expected_disp, actual, help=help)
+        if re.search(expected2,actual) and len(actual_keys)!=3:
+            help1 = "Make sure your output includes only the last three keys."
+            raise check50.Mismatch(expected_disp, actual, help=help1)
+        help2 = f"Make sure the keys are returned in a list: {actual_keys}"
+        raise check50.Mismatch(expected_disp, actual, help=help2)
         
         #raise check50.Failure("Your answer does not include the correct output for the last three keys in the financials dictionary.", help = help)
         
