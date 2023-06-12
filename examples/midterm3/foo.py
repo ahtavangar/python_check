@@ -72,18 +72,17 @@ def extract_financials_check2():
     check50.include("MidtermFinancialReport.txt")
     assert os.path.exists("MidtermFinancialReport.txt")
 
-    actual = check50.run("python3 Assignment_3.py").stdin("MidtermFinancialReport.txt").stdout().strip('\n').split('\n')[3] 
+    actual = check50.run("python3 Assignment_3.py").stdin("MidtermFinancialReport.txt").stdout().strip('\n').split('\n')[3] # grabs the last line of stdout
     actual_keys = actual.strip('[]').split(',') # the list of keys in a list
-    expected = r"\['Location19', 'Location20', 'Statistics'\]"
-    expected_disp = "['Location19', 'Location20', 'Statistics']"
-    expected2 = "'Location19', 'Location20', 'Statistics'"
+    expected = r"\['Location19', 'Location20', 'Statistics'\]" # with regex, re.search() captures exactly three keys including [ ].
+    expected_disp = "['Location19', 'Location20', 'Statistics']" # to display in the raise help message
+    expected2 = "'Location19', 'Location20', 'Statistics'" # without regex, re.search matches if three keys among more than three keys in the stdout
         
     if not re.search(expected, actual):
         if re.search(expected2,actual) and len(actual_keys)>3:
             help1 = "Make sure your output includes only the last three keys."
             raise check50.Mismatch(expected_disp, actual, help=help1)
-        help2 = f"Make sure the keys are returned in a list: {actual_keys}"
-        raise check50.Mismatch(expected_disp, actual, help=help2)
-        
-        #raise check50.Failure("Your answer does not include the correct output for the last three keys in the financials dictionary.", help = help)
+        #help2 = f"Make sure the keys are returned in a list: {actual_keys}"
+        #raise check50.Mismatch(expected_disp, actual, help=help2)
+        raise check50.Failure("Your answer does not include the correct output for the last three keys in the financials dictionary.")
         
