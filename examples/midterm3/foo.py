@@ -76,7 +76,7 @@ def extract_financials_check2():
     actual_keys = actual.strip('[]').split(',') # the list of keys in a list
     expected = "'Location19', 'Location20', 'Statistics'"
         
-    if not re.search(expected, actual):
+    if not re.search(expected, actual) or len(actual_keys)!=3:
         help = f"Make sure the keys are returned in a list: {actual_keys}"
         raise check50.Mismatch(expected, actual, help=help)
         
