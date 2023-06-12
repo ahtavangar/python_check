@@ -71,9 +71,10 @@ def extract_financials_check2():
     
     check50.include("MidtermFinancialReport.txt")
     assert os.path.exists("MidtermFinancialReport.txt")
+    actual = check50.run("python3 Assignment_3.py").stdin("MidtermFinancialReport.txt").stdout()
     try:
-        actual = check50.run("python3 Assignment_3.py").stdin("MidtermFinancialReport.txt").stdout().strip('\n').split('\n')[3] # grabs the last line (three keys printout) of stdout
-        actual_keys = actual.strip('[]').split(',') # the list of keys in a list
+        actual1 = check50.run("python3 Assignment_3.py").stdin("MidtermFinancialReport.txt").stdout().strip('\n').split('\n')[3] # grabs the last line (three keys printout) of stdout
+        actual_keys = actual1.strip('[]').split(',') # get the keys in a list so the length can be counted
     except: print('')
     expected = r"\['Location19', 'Location20', 'Statistics'\]" # with regex, re.search() captures exactly three keys including [ ].
     expected_disp = "['Location19', 'Location20', 'Statistics']" # to display in the raise help message
