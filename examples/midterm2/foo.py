@@ -109,8 +109,11 @@ def extract_values_check4():
 def make_value_float_check():
     '''Checks the out put of make_value_float() function for extra_check.py'''
 
+    check50.include("sample.txt")
+    assert os.path.exists("sample.txt")
+    
     check50.py.append_code("Assignment_1.py", "extra_checks.py")
-    actual = check50.run("python3 Assignment_1.py").stdout()
+    actual = check50.run("python3 Assignment_1.py").stdin('sample.txt').stdout()
     expected = "1234008.23"
 
     if not re.search(expected, actual):
