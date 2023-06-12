@@ -111,6 +111,7 @@ def make_value_float_check():
 
     check50.include("sample.txt")
     assert os.path.exists("sample.txt")
+    check50.include("extra_checks.py")
     
     check50.py.append_code("Assignment_1.py", "extra_checks.py")
     actual = check50.run("python3 Assignment_1.py").stdin('sample.txt').stdout()
