@@ -115,7 +115,7 @@ def make_value_float_check():
     
     check50.py.append_code("Assignment_2.py", "extra_checks.py")
     actual = check50.run("python3 Assignment_2.py").stdin('sample.txt').stdout()
-    expected = "1234008.23A"
+    expected = "1234008.23"
 
     if not re.search(expected, actual):
         help = "make_value_float() function does not produce the correct output"
