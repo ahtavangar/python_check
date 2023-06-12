@@ -72,11 +72,12 @@ def extract_financials_check2():
     check50.include("MidtermFinancialReport.txt")
     assert os.path.exists("MidtermFinancialReport.txt")
 
-    actual = check50.run("python3 Assignment_3.py").stdin("MidtermFinancialReport.txt").stdout().strip('\n').split('\n')[3]
-    expected = "'Location19', 'Location20', 'Statistics'"
+    actual = check50.run("python3 Assignment_3.py").stdin("MidtermFinancialReport.txt").stdout().strip('\n').split('\n')[3] 
+    actual_keys = actual.strip('[]').split(',') # the list of keys in a list
+    expected = "['Location19', 'Location20', 'Statistics']"
         
     if not re.search(expected, actual):
-        help = "Make sure the keys are returned in a list."
+        help = f"Make sure the keys are returned in a list: {actual_keys}"
         raise check50.Mismatch(expected, actual, help=help)
         
         #raise check50.Failure("Your answer does not include the correct output for the last three keys in the financials dictionary.", help = help)
