@@ -1,1 +1,1 @@
-print(make_value_float("$1,234,23"))
+print(make_value_float("$1,234,008.23"))
